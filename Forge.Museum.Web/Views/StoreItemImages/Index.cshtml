@@ -1,0 +1,115 @@
+﻿@model PagedList.IPagedList<StoreItemImageDto>
+@using PagedList.Mvc;
+@using Forge.Museum.BLL.Http;
+@using Forge.Museum.Interfaces.DataTransferObjects.Store;
+<link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Index.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    if (ViewBag.StoreItemID != null)
+    {
+        ViewBag.ContentBoxHeader = ViewBag.StoreItemID;
+    }
+
+}
+
+<h2>Store Item Images</h2>
+
+<p>
+    @Html.ActionLink("Add New Image for Store Item", "Create", new { storeItemId = ViewBag.StoreItemID })
+</p>
+
+@using (Html.BeginForm("Index", "StoreItemImages", FormMethod.Get))
+{
+    <p>
+        Search by Id: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<div class="content-box">
+    <div class="content-box-header">
+        @if (ViewBag.StoreItemID == null)
+        {
+            <h3>Store Item Images for: All Items </h3>
+        }
+        else
+        {
+            <h3>Store Item Images: Store Item #@ViewBag.ContentBoxHeader - @ViewBag.StoreItemName </h3>
+        }
+        <ul class="content-box-tabs" style="display: block;">
+            <li><a href="#tab1" class="default-tab current">Results</a></li> <!-- href must be unique and match the id of target div -->
+            <li>
+                @Html.ActionLink("Add New Content", "Create")
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-box-content" style="display: block;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.ActionLink("ID#", "Index", new { sortOrder = ViewBag.IdSortParm, currentFilter = ViewBag.CurrentFilter }, new { @title = "Sort By ID#" })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Product ID", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @title = "Sort By Product ID#" })
+                    </th>
+                    <th>
+                        @Html.ActionLink("File Type", "Index", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter }, new { @title = "Sort By File Type" })
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="pagination-sm">
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                    <td>
+                        @if (item.Image == null || item.Image.Length == 0) { }
+                        else
+                        {
+                            <img class="img-thumbnail" src="data:image;base64,@System.Convert.ToBase64String(item.Image)" width="60" height="50" />
+                        }
+                    </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.StoreItem.Id.ToString() + ": " + item.StoreItem.Name, "Details", "StoreItems", new { id = item.StoreItem.Id }, null)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FileType)
+                        </td>
+                        <td>
+                            <!-- Edit Button */ !-->
+                            <a href="@Url.Action("Edit", "Tours",  new { id = item.Id })" class="btn btn-link" title="Edit Image">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </a>|
+                            <!-- Details Button */ !-->
+                            <a href="@Url.Action("Details", "Tours",  new { id = item.Id })" class="btn btn-link" tilte="Image Details">
+                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                            </a>|
+                            <!-- Delete Button */ !-->
+                            <a href="@Url.Action("Delete", "Tours",  new { id = item.Id })" class="btn btn-link" title="Delete Image">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

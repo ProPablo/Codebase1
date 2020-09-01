@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Forge.Museum.Interfaces.DataTransferObjects.Tour.TourArtefactDto>
+<link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Index.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    int tourId = ViewBag.tourId;
+    string tourName = ViewBag.tourName;
+    var list = Model.ToList();
+}
+
+<h2>Tour Artefacts</h2>
+
+<p>
+    @Html.ActionLink("Add Artefact to Tour: " + @tourName, "Create", new { tourId = tourId })
+</p>
+
+<div class="content-box">
+    <div class="content-box-header">
+        <h3>Artefacts in Tour# @tourId - @tourName</h3>
+        <ul class="content-box-tabs" style="display: block;">
+            <li><a href="#tab1" class="default-tab current">Results</a></li> <!-- href must be unique and match the id of target div -->
+            <li>
+                @Html.ActionLink("Add Artefact to Tour: " + @tourName, "Create", new { tourId = tourId })
+            </li>
+
+        </ul>
+    </div>
+    <div class="content-box-content" style="display: block;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Index Position
+                    </th>
+                    <th>
+                        Artefact
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in list)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Order)
+                        </td>
+                        <td>
+                            @Html.ActionLink(item.Artefact.Id.ToString() + ": " + item.Artefact.Name, "Details", "Artefacts", new { id = item.Artefact.Id }, new { @title = "View Artefact Details" })
+                        </td>
+                        <td>
+                            <!-- Edit Button */ !-->
+                            <a href="@Url.Action("Edit", "ToursArtefacts",  new { id = item.Id, tourId = tourId })" class="btn btn-link" title="Edit Artefact in Tour">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </a>|
+
+                            <!-- Delete Button */ !-->
+                            <a href="@Url.Action("Delete", "ToursArtefacts",  new { id = item.Id, tourId = tourId })" class="btn btn-link" title="Delete Artefact from Tour">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@if (ViewBag.Action != null)
+{
+    <div class="notification success png_bg">
+        <div>Success! Artefact <b>#@ViewBag.RecentIdA</b> <i>@ViewBag.RecentNameA</i> in Tour <b>#@ViewBag.RecentIdT</b> <i>@ViewBag.RecentNameT</i> has been @ViewBag.Action! </div>
+    </div>
+}
+    <div>
+        <a href="@Url.Action("Index", "Tours")" class="btn btn-link">
+            <span class="text-left" aria-hidden="true">Back to List of All Tours</span>
+        </a>
+    </div>

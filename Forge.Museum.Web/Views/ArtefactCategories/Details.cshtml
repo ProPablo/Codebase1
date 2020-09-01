@@ -1,0 +1,44 @@
+﻿@model Forge.Museum.Interfaces.DataTransferObjects.Artefact.ArtefactCategoryDto
+<link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Index.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Category #@Model.Id - @Model.Name</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>@Html.LabelFor(model => model.Id, "Category ID#:")</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.LabelFor(model => model.Name, "Category Name:")</dt>
+        <dd>@Html.DisplayFor(model => model.Name)</dd>
+
+        <dt>@Html.LabelFor(model => model.Description, "Description:")</dt>
+        <dd>@Html.DisplayFor(model => model.Description)</dd>
+
+        <dt>
+            @Html.LabelFor(model => model.Image, "Image:")
+        </dt>
+
+        @if (Model.Image == null || Model.Image.Length == 0)
+        {
+            <dd> No Image uploaded for this Category yet </dd>
+        }
+        else
+        {
+            <dd>
+                <img src="data:image;base64,@System.Convert.ToBase64String(Model.Image)" width="160" height="160" />
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
