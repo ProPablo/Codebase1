@@ -191,6 +191,9 @@ namespace Forge.Museum.Web.Controllers {
             newArtefact.Description = artefact.Description;
             newArtefact.ModifiedDate = artefact.ModifiedDate;
             newArtefact.Radius_Of_Effect = artefact.Radius_Of_Effect;
+            newArtefact.Coord_X = artefact.Coord_X;
+            newArtefact.Coord_Y = artefact.Coord_Y;
+            newArtefact.Activation = artefact.Activation;
             newArtefact.ArtefactCategory = artefact.ArtefactCategory;
 
             if (ModelState.IsValid) {
@@ -255,6 +258,9 @@ namespace Forge.Museum.Web.Controllers {
                 artefact_editted.Name = artefact.Name;
                 artefact_editted.Description = artefact.Description;
                 artefact_editted.Radius_Of_Effect = artefact.Radius_Of_Effect;
+                artefact_editted.Coord_X = artefact.Coord_X;
+                artefact_editted.Coord_Y= artefact.Coord_Y;
+                artefact_editted.Activation= artefact.Activation;
                 artefact_editted.AdditionalComments = artefact.AdditionalComments;
                 artefact_editted.ArtefactCategory = artefact.ArtefactCategory;
                 artefact_editted.Zone = artefact.Zone;
