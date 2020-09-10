@@ -32,6 +32,12 @@ namespace Forge.Museum.API.Models
 
         public double Radius_Of_Effect { get; set; }
 
+        public double Coord_X { get; set; }
+
+        public double Coord_Y { get; set; }
+
+        public bool Activation { get; set; }
+
         public int ArtefactStatus { get; set; }
 
         public virtual Zone Zone { get; set; }

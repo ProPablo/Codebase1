@@ -25,10 +25,13 @@ namespace Forge.Museum.API.CoreHandlers
                 Name = dto.Name,
                 Description = dto.Description,
                 Image = dto.Image,
-				ImageFileType = dto.ImageFileType,
+                ImageFileType = dto.ImageFileType,
                 AdditionalComments = dto.AdditionalComments,
                 AcquisitionDate = dto.AcquisitionDate,
                 Radius_Of_Effect = dto.Radius_Of_Effect,
+                Coord_X = dto.Coord_X,
+                Coord_Y = dto.Coord_Y,
+                Activation = dto.Activation,
                 ArtefactStatus = (int)dto.ArtefactStatus,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
@@ -69,6 +72,9 @@ namespace Forge.Museum.API.CoreHandlers
             artefact.AdditionalComments = dto.AdditionalComments;
             artefact.AcquisitionDate = dto.AcquisitionDate;
             artefact.Radius_Of_Effect = dto.Radius_Of_Effect;
+            artefact.Coord_X = dto.Coord_X;
+            artefact.Coord_Y = dto.Coord_Y;
+            artefact.Activation = dto.Activation;
             artefact.ArtefactStatus = (int)dto.ArtefactStatus;
             artefact.IsDeleted = dto.IsDeleted;
             artefact.ModifiedDate = DateTime.UtcNow;
