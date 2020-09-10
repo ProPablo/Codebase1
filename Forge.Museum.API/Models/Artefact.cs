@@ -34,9 +34,6 @@ namespace Forge.Museum.API.Models
 
         public int ArtefactStatus { get; set; }
 
-		[Required, StringLength(10)]
-		public string UniqueCode { get; set; }
-
         public virtual Zone Zone { get; set; }
 
         public virtual ArtefactCategory ArtefactCategory { get; set; }

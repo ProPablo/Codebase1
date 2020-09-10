@@ -17,7 +17,6 @@ namespace Forge.Museum.Interfaces.DataTransferObjects.Artefact
         public string AdditionalComments { get; set; }
         public DateTime AcquisitionDate { get; set; }
         public double Radius_Of_Effect { get; set; }
-		public string UniqueCode { get; set; }
         public ArtefactStatus ArtefactStatus { get; set; }
         public ZoneSimpleDto Zone { get; set; }
         public ArtefactCategorySimpleDto ArtefactCategory { get; set; }
