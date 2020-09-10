@@ -30,11 +30,7 @@ namespace Forge.Museum.API.Models
 
         public DateTime AcquisitionDate { get; set; }
 
-        public int Measurement_Length { get; set; }
-
-        public int Measurement_Width { get; set; }
-
-        public int Measurement_Height { get; set; }
+        public double Radius_Of_Effect { get; set; }
 
         public int ArtefactStatus { get; set; }
 

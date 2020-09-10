@@ -16,9 +16,7 @@ namespace Forge.Museum.Interfaces.DataTransferObjects.Artefact
 		public string ImageFileType { get; set; }
         public string AdditionalComments { get; set; }
         public DateTime AcquisitionDate { get; set; }
-        public int Measurement_Length { get; set; }
-        public int Measurement_Width { get; set; }
-        public int Measurement_Height { get; set; }
+        public double Radius_Of_Effect { get; set; }
 		public string UniqueCode { get; set; }
         public ArtefactStatus ArtefactStatus { get; set; }
         public ZoneSimpleDto Zone { get; set; }
