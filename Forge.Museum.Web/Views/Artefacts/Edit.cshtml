@@ -61,26 +61,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Measurement_Length, "Length:", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Radius_Of_Effect, "Radius of Effect:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Measurement_Length, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Measurement_Length, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Measurement_Height, "Height:", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Measurement_Height, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Measurement_Height, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Measurement_Width, "Width:", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Measurement_Width, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Measurement_Width, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Radius_Of_Effect, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Radius_Of_Effect, "", new { @class = "text-danger" })
             </div>
         </div>
 
