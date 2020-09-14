@@ -257,6 +257,19 @@
     <Compile Include="Migrations\201810230953160_AddedUniqueArtefactCode.Designer.cs">
       <DependentUpon>201810230953160_AddedUniqueArtefactCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009100219002_ArtefactChanges.cs" />
+    <Compile Include="Migrations\202009100219002_ArtefactChanges.Designer.cs">
+      <DependentUpon>202009100219002_ArtefactChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009100547292_UniqueCodeRemove.cs" />
+    <Compile Include="Migrations\202009100547292_UniqueCodeRemove.Designer.cs">
+      <DependentUpon>202009100547292_UniqueCodeRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009100836249_AddedXYActivation.cs" />
+    <Compile Include="Migrations\202009100836249_AddedXYActivation.Designer.cs">
+      <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artefact.cs" />
     <Compile Include="Models\ArtefactCategory.cs" />
@@ -419,6 +432,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810230953160_AddedUniqueArtefactCode.resx">
       <DependentUpon>201810230953160_AddedUniqueArtefactCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009100219002_ArtefactChanges.resx">
+      <DependentUpon>202009100219002_ArtefactChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009100547292_UniqueCodeRemove.resx">
+      <DependentUpon>202009100547292_UniqueCodeRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009100836249_AddedXYActivation.resx">
+      <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -30,16 +30,15 @@ namespace Forge.Museum.API.Models
 
         public DateTime AcquisitionDate { get; set; }
 
-        public int Measurement_Length { get; set; }
+        public double Radius_Of_Effect { get; set; }
 
-        public int Measurement_Width { get; set; }
+        public double Coord_X { get; set; }
 
-        public int Measurement_Height { get; set; }
+        public double Coord_Y { get; set; }
+
+        public bool Activation { get; set; }
 
         public int ArtefactStatus { get; set; }
-
-		[Required, StringLength(10)]
-		public string UniqueCode { get; set; }
 
         public virtual Zone Zone { get; set; }
 

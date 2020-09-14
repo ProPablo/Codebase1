@@ -25,17 +25,17 @@ namespace Forge.Museum.API.CoreHandlers
                 Name = dto.Name,
                 Description = dto.Description,
                 Image = dto.Image,
-				ImageFileType = dto.ImageFileType,
+                ImageFileType = dto.ImageFileType,
                 AdditionalComments = dto.AdditionalComments,
                 AcquisitionDate = dto.AcquisitionDate,
-                Measurement_Height = dto.Measurement_Height,
-                Measurement_Length = dto.Measurement_Length,
-                Measurement_Width = dto.Measurement_Width,
+                Radius_Of_Effect = dto.Radius_Of_Effect,
+                Coord_X = dto.Coord_X,
+                Coord_Y = dto.Coord_Y,
+                Activation = dto.Activation,
                 ArtefactStatus = (int)dto.ArtefactStatus,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
-                IsDeleted = false,
-				UniqueCode = CalculateUniqueCode()
+                IsDeleted = false
             };
 
             //Add Zone 
@@ -71,9 +71,10 @@ namespace Forge.Museum.API.CoreHandlers
 			artefact.ImageFileType = dto.ImageFileType;
             artefact.AdditionalComments = dto.AdditionalComments;
             artefact.AcquisitionDate = dto.AcquisitionDate;
-            artefact.Measurement_Height = dto.Measurement_Height;
-            artefact.Measurement_Length = dto.Measurement_Length;
-            artefact.Measurement_Width = dto.Measurement_Width;
+            artefact.Radius_Of_Effect = dto.Radius_Of_Effect;
+            artefact.Coord_X = dto.Coord_X;
+            artefact.Coord_Y = dto.Coord_Y;
+            artefact.Activation = dto.Activation;
             artefact.ArtefactStatus = (int)dto.ArtefactStatus;
             artefact.IsDeleted = dto.IsDeleted;
             artefact.ModifiedDate = DateTime.UtcNow;
@@ -143,40 +144,7 @@ namespace Forge.Museum.API.CoreHandlers
         }
 		#endregion
 
-		#region Helpers
-		private string CalculateUniqueCode()
-		{
-			string uniqueCode;
-			int nextCode = 1;
 
-			try
-			{ 
-				var artefacts = Db.Artefacts;
-
-				if (artefacts != null && artefacts.Any())
-				{
-					int currentMaxNum = Convert.ToInt32(Db.Artefacts.Select(m => m.UniqueCode).Max());
-
-					nextCode = currentMaxNum + 1;
-				}
-			}
-			catch(Exception ex)
-			{
-				nextCode = Db.Artefacts.Count() + 1;
-			}
-
-			var numZero = 4 - nextCode.ToString().Length;
-			uniqueCode = string.Empty;
-			for(var i = 1; i <= numZero; i++)
-			{
-				uniqueCode = uniqueCode + "0";
-			}
-
-			uniqueCode += nextCode.ToString();
-
-			return uniqueCode;
-		}
-		#endregion
 
 	}
 }
