@@ -269,6 +269,7 @@
     <Compile Include="Migrations\202009100836249_AddedXYActivation.Designer.cs">
       <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artefact.cs" />
     <Compile Include="Models\ArtefactCategory.cs" />

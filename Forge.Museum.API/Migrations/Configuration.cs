@@ -37,6 +37,8 @@ namespace Forge.Museum.API.Migrations
 				LockoutEndDateUtc = DateTime.Now,
 				LockoutEnabled = false
 			});
-		}
+
+            //Seeder.SeedAll(context);
+        }
     }
 }
