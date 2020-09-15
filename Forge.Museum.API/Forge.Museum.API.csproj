@@ -279,6 +279,7 @@
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\Base.cs" />
+    <Compile Include="Models\Beacon.cs" />
     <Compile Include="Models\Exhibition.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\StoreItem.cs" />

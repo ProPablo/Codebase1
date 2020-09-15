@@ -345,9 +345,7 @@
     <Content Include="Views\StoreItemImages\Edit.cshtml" />
     <Content Include="Views\StoreItemImages\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
