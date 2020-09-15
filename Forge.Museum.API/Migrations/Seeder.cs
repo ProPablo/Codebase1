@@ -20,6 +20,7 @@ namespace Forge.Museum.API.Migrations
                 Coord_Y = 10,
                 CreatedDate = DateTime.UtcNow,
                 ModifiedDate = DateTime.UtcNow,
+                AcquisitionDate = DateTime.UtcNow
             });
         }
     }
