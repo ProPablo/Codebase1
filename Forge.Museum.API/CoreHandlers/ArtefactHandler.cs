@@ -50,6 +50,12 @@ namespace Forge.Museum.API.CoreHandlers
                 artefact.ArtefactCategory = Db.ArtefactCategories.Find(dto.ArtefactCategory.Id);
             }
 
+            //Add Beacon
+            if (dto.Beacon != null && dto.Beacon.Id > 0)
+            {
+                artefact.Beacon = Db.Beacons.Find(dto.Beacon.Id);
+            }
+
             Db.Artefacts.Add(artefact);
 
             Db.SaveChanges();
@@ -98,6 +104,7 @@ namespace Forge.Museum.API.CoreHandlers
             {
                 artefact.ArtefactCategory = null;
             }
+
 
             Db.SaveChanges();
 

@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ArtefactController.cs" />
     <Compile Include="Controllers\ArtefactInfoController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\BeaconsController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\ExhibitionController.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="CoreHandlers\ArtefactHandler.cs" />
     <Compile Include="CoreHandlers\ArtefactInfoHandler.cs" />
     <Compile Include="CoreHandlers\BaseApiHandler.cs" />
+    <Compile Include="CoreHandlers\BeaconHandler.cs" />
     <Compile Include="CoreHandlers\ExampleHandler.cs" />
     <Compile Include="CoreHandlers\ExhibitonHandler.cs" />
     <Compile Include="CoreHandlers\StoreItemHandler.cs" />

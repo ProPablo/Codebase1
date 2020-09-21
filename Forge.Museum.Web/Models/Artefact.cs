@@ -36,6 +36,7 @@ namespace Forge.Museum.Web.Models
         public int? ArtefactCategory_Id { get; set; }
 
         public int? Zone_Id { get; set; }
+        public int? Beacon_Id { get; set; }
 
         public virtual ArtefactCategory ArtefactCategory { get; set; }
     }

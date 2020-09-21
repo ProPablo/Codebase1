@@ -16,8 +16,6 @@ namespace Forge.Museum.API.Migrations
         public static void SeedAll(ApplicationDbContext context)
         {
 
-
-
             context.Artefacts.AddOrUpdate(new Artefact
             {
                 Name = "Dynamax Pikachu",

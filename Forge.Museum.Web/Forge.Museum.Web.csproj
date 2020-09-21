@@ -207,6 +207,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BeaconsController.cs" />
     <Compile Include="Controllers\StoreItemImagesController.cs" />
     <Compile Include="Controllers\StoreItemsController.cs" />
     <Compile Include="Controllers\ExhibitionsController.cs" />
@@ -345,7 +346,9 @@
     <Content Include="Views\StoreItemImages\Edit.cshtml" />
     <Content Include="Views\StoreItemImages\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Beacons\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
