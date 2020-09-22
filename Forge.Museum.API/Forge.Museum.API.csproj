@@ -271,6 +271,10 @@
     <Compile Include="Migrations\202009100836249_AddedXYActivation.Designer.cs">
       <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009220308302_Beacons.cs" />
+    <Compile Include="Migrations\202009220308302_Beacons.Designer.cs">
+      <DependentUpon>202009220308302_Beacons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artefact.cs" />
@@ -444,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009100836249_AddedXYActivation.resx">
       <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009220308302_Beacons.resx">
+      <DependentUpon>202009220308302_Beacons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
