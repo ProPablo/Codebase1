@@ -23,7 +23,7 @@ namespace Forge.Museum.Interfaces.DataTransferObjects.Artefact
         public ArtefactStatus ArtefactStatus { get; set; }
         public ZoneSimpleDto Zone { get; set; }
         public ArtefactCategorySimpleDto ArtefactCategory { get; set; }
-        public BeaconDto Beacon { get; set; }
+        public BeaconSimpleDto Beacon { get; set; }
         public List<ArtefactInfoSimpleDto> ArtefactInfos { get; set; }
     }
 }

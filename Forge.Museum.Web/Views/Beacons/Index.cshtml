@@ -98,8 +98,17 @@
                     </td>
                     <!-- ARTEFACVT LINK*/ !-->
                     <td>
-                        @Html.DisplayFor(modelItem => item.Artefacts) &nbsb
-</td>
+                        @foreach (var artefact in item.Artefacts)
+                        {
+                            @Html.ActionLink(artefact.Name.ToString() + ",",
+                            "Edit",   // <-- ActionMethod
+                            "Artefacts",  // <-- Controller Name.
+                            new { id = artefact.Id }, // <-- Route arguments.
+                            null  // <-- htmlArguments .. which are none. You need this value
+
+                           );
+                        }
+                    </td>
                     <td>
                         <!-- Edit Button */ !-->
                         <a href="@Url.Action("Edit", "Beacons",  new { id = item.Id })" class="btn btn-link" title="Edit Beacon">
@@ -113,9 +122,6 @@
                         <a href="@Url.Action("Delete", "Beacons",  new { id = item.Id })" class="btn btn-link" title="Delete Beacon">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </a>|
-                        <a href="@Url.Action("Index", "Beacons",  new { artefactId = item.Id })" class="btn btn-link" title="View Beacon Content">
-                            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                        </a>
                     </td>
                 </tr>
                 }

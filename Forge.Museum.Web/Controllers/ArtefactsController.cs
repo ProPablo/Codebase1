@@ -13,6 +13,7 @@ using Forge.Museum.Web.Models;
 using PagedList;
 using System.IO;
 using Forge.Museum.Web.Controllers;
+using Microsoft.Ajax.Utilities;
 
 namespace Forge.Museum.Web.Controllers {
     [Authorize]
@@ -60,10 +61,15 @@ namespace Forge.Museum.Web.Controllers {
         public async Task<List<SelectListItem>> PopulateBeaconDropdownList()
         {
             var request = new HTTPrequest();
-            List<BeaconDto> museumBeacons = await request.Get<List<BeaconDto>>("api/beacon?pageNumber=0&numPerPage=5-0&isDeleted=false");
+            List<BeaconSimpleDto> museumBeacons = await request.Get<List<BeaconSimpleDto>>("api/beacon?pageNumber=0&numPerPage=5-0&isDeleted=false");
             List<SelectListItem> beaconDropdown = new List<SelectListItem>();
             if (museumBeacons != null && museumBeacons.Any())
             {
+                beaconDropdown.Add(new SelectListItem()
+                {
+                    Text="Selectasdasd Beacon",
+                    Value = ""
+                });
                 foreach (var beacon in museumBeacons)
                 {
                     beaconDropdown.Add(new SelectListItem()
@@ -223,7 +229,9 @@ namespace Forge.Museum.Web.Controllers {
             newArtefact.Activation = artefact.Activation;
             newArtefact.ArtefactCategory = artefact.ArtefactCategory;
             newArtefact.Zone = artefact.Zone;
+            System.Console.WriteLine("CODETEST" + artefact.Beacon);
             newArtefact.Beacon = artefact.Beacon;
+
 
             if (ModelState.IsValid) {
                 var request = new HTTPrequest();

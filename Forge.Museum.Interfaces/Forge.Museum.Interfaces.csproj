@@ -50,6 +50,7 @@
     <Compile Include="DataTransferObjects\Artefact\ArtefactInfoDto.cs" />
     <Compile Include="DataTransferObjects\Artefact\ArtefactInfoSimpleDto.cs" />
     <Compile Include="DataTransferObjects\Artefact\ArtefactSimpleDto.cs" />
+    <Compile Include="DataTransferObjects\Artefact\BeaconSimpleDto.cs" />
     <Compile Include="DataTransferObjects\Artefact\ZoneDto.cs" />
     <Compile Include="DataTransferObjects\Artefact\ZoneSimpleDto.cs" />
     <Compile Include="DataTransferObjects\BaseDto.cs" />
