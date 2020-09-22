@@ -25,6 +25,11 @@ namespace Forge.Museum.Web.Controllers {
             var request = new HTTPrequest();
             List<ArtefactCategorySimpleDto> artefactCateories = await request.Get<List<ArtefactCategorySimpleDto>>("api/artefactCatergory?pageNumber=0&numPerPage=5-0&isDeleted=false");
             List<SelectListItem> categoryDropdown = new List<SelectListItem>();
+            categoryDropdown.Add(new SelectListItem()
+            {
+                Text = "Select Category",
+                Value = ""
+            });
             if (artefactCateories != null && artefactCateories.Any())
             {
                 foreach (var category in artefactCateories)
@@ -44,6 +49,11 @@ namespace Forge.Museum.Web.Controllers {
             var request = new HTTPrequest();
             List<ZoneSimpleDto> museumZones = await request.Get<List<ZoneSimpleDto>>("api/zone?pageNumber=0&numPerPage=5-0&isDeleted=false");
             List<SelectListItem> zoneDropdown = new List<SelectListItem>();
+            zoneDropdown.Add(new SelectListItem()
+            {
+                Text = "Select Zone",
+                Value = ""
+            });
             if (museumZones != null && museumZones.Any())
             {
                 foreach (var zone in museumZones)
@@ -63,13 +73,13 @@ namespace Forge.Museum.Web.Controllers {
             var request = new HTTPrequest();
             List<BeaconSimpleDto> museumBeacons = await request.Get<List<BeaconSimpleDto>>("api/beacon?pageNumber=0&numPerPage=5-0&isDeleted=false");
             List<SelectListItem> beaconDropdown = new List<SelectListItem>();
+            beaconDropdown.Add(new SelectListItem()
+            {
+                Text = "Select Beacon",
+                Value = ""
+            });
             if (museumBeacons != null && museumBeacons.Any())
             {
-                beaconDropdown.Add(new SelectListItem()
-                {
-                    Text="Selectasdasd Beacon",
-                    Value = ""
-                });
                 foreach (var beacon in museumBeacons)
                 {
                     beaconDropdown.Add(new SelectListItem()
