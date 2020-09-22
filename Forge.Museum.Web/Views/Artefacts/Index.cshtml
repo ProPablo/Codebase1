@@ -68,6 +68,9 @@
                     <th>
                         @Html.ActionLink("Zone", "Index", new { sortOrder = ViewBag.CategorySortParm, currentFilter = ViewBag.CurrentFilter }, new { @title = "Sort By Zone" })
                     </th>
+                    <th>
+                        @Html.ActionLink("Beacon", "Index", new { sortOrder = ViewBag.CategorySortParm, currentFilter = ViewBag.CurrentFilter }, new { @title = "Sort By Beacon" })
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -123,6 +126,12 @@
                         @if (item.Zone != null)
                         {
                             @Html.ActionLink(item.Zone.Id.ToString() + ": " + item.Zone.Name, "Details", "Zones", new { id = item.Zone.Id }, new { @title = "View Zone Details" })
+                        }
+                    </td>
+                    <td>
+                        @if (item.Beacon != null)
+                        {
+                            @Html.ActionLink(item.Beacon.Id.ToString() + ": " + item.Beacon.Name, "Details", "Beacons", new { id = item.Beacon.Id }, new { @title = "View Beacon Details" })
                         }
                     </td>
                     <td>

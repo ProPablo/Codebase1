@@ -105,6 +105,16 @@ namespace Forge.Museum.API.CoreHandlers
                 artefact.ArtefactCategory = null;
             }
 
+            //Process Beacon
+            if (dto.Beacon != null && dto.Beacon.Id > 0)
+            {
+                artefact.Beacon = Db.Beacons.Find(dto.Beacon.Id);
+            }
+            else
+            {
+                artefact.Beacon = null;
+            }
+
 
             Db.SaveChanges();
 
@@ -129,6 +139,9 @@ namespace Forge.Museum.API.CoreHandlers
 
             if (filter.zoneId.HasValue)
                 artefacts = artefacts.Where(m => m.Zone.Id == filter.zoneId.Value);
+
+            if (filter.beaconId.HasValue)
+                artefacts = artefacts.Where(m => m.Beacon.Id == filter.beaconId.Value);
 
             if (filter.isDeleted.HasValue)
                 artefacts = artefacts.Where(m => m.IsDeleted == filter.isDeleted.Value);

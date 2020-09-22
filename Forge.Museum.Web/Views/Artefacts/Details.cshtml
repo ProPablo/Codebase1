@@ -45,6 +45,9 @@
         <dt>@Html.LabelFor(model => model.Zone, "Zone:")</dt>
         <dd>@Html.DisplayFor(model => model.Zone.Name)</dd>
 
+        <dt>@Html.LabelFor(model => model.Beacon, "Beacon:")</dt>
+        <dd>@Html.DisplayFor(model => model.Beacon.Name)</dd>
+
         <dt>@Html.LabelFor(model => model.Image, "Main Image:")</dt>
 
         @if (Model.Image == null || Model.Image.Length == 0)
