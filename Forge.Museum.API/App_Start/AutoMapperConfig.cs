@@ -30,6 +30,7 @@ namespace Forge.Museum.API
 				config.CreateMap<StoreItemImage, StoreItemImageDto>();
                 config.CreateMap<Zone, ZoneDto>();
                 config.CreateMap<Zone, ZoneSimpleDto>();
+                config.CreateMap<Beacon, BeaconDto>();
                 config.CreateMap<Base, BaseDto>();
                 config.CreateMap<Tour, TourDto>();
                 config.CreateMap<Tour, TourSimpleDto>();

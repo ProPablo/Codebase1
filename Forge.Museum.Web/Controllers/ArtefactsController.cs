@@ -57,7 +57,24 @@ namespace Forge.Museum.Web.Controllers {
             return zoneDropdown;
         }
 
-
+        public async Task<List<SelectListItem>> PopulateBeaconDropdownList()
+        {
+            var request = new HTTPrequest();
+            List<BeaconDto> museumBeacons = await request.Get<List<BeaconDto>>("api/beacon?pageNumber=0&numPerPage=5-0&isDeleted=false");
+            List<SelectListItem> beaconDropdown = new List<SelectListItem>();
+            if (museumBeacons != null && museumBeacons.Any())
+            {
+                foreach (var beacon in museumBeacons)
+                {
+                    beaconDropdown.Add(new SelectListItem()
+                    {
+                        Text = beacon.Id + ": " + beacon.Name,
+                        Value = beacon.Id.ToString()
+                    });
+                }
+            }
+            return beaconDropdown;
+        }
 
         // GET: Artefacts
         public async Task<ActionResult> Index(string sortOrder, string currentFilter, string searchString, int? page, string recentAction, string recentName, string recentId) {
@@ -158,6 +175,11 @@ namespace Forge.Museum.Web.Controllers {
             zoneDropdown = await PopulateZoneDropdownList();
             ViewBag.ZoneList = zoneDropdown;
 
+            //ARTEFACT BEACON DROPDOWN
+            List<SelectListItem> beaconDropdown = new List<SelectListItem>();
+            zoneDropdown = await PopulateBeaconDropdownList();
+            ViewBag.BeaconList = beaconDropdown;
+
             return View();
         }
 
@@ -177,6 +199,11 @@ namespace Forge.Museum.Web.Controllers {
             List<SelectListItem> zoneDropdown = new List<SelectListItem>();
             zoneDropdown = await PopulateZoneDropdownList();
             ViewBag.ZoneList = zoneDropdown;
+
+            //ARTEFACT BEACON DROPDOWN
+            List<SelectListItem> beaconDropdown = new List<SelectListItem>();
+            zoneDropdown = await PopulateBeaconDropdownList();
+            ViewBag.BeaconList = beaconDropdown;
 
             // Checks Name is not Null or Empty
             if (string.IsNullOrEmpty(artefact.Name))
@@ -235,6 +262,10 @@ namespace Forge.Museum.Web.Controllers {
             zoneDropdown = await PopulateZoneDropdownList();
             ViewBag.ZoneList = zoneDropdown;
 
+            //ARTEFACT BEACON DROPDOWN
+            List<SelectListItem> beaconDropdown = new List<SelectListItem>();
+            zoneDropdown = await PopulateBeaconDropdownList();
+            ViewBag.BeaconList = beaconDropdown;
 
             return View(artefact);
         }

@@ -1,10 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
 namespace Forge.Museum.Web.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class Artefact
     {
@@ -36,6 +36,7 @@ namespace Forge.Museum.Web.Models
         public int? ArtefactCategory_Id { get; set; }
 
         public int? Zone_Id { get; set; }
+        public int? Beacon_Id { get; set; }
 
         public virtual ArtefactCategory ArtefactCategory { get; set; }
     }

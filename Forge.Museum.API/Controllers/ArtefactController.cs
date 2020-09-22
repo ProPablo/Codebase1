@@ -13,6 +13,7 @@ namespace Forge.Museum.API.Controllers
     {
         public int? categoryId { get; set; }
         public int? zoneId { get; set; }
+        public int? beaconId { get; set; }
     }
 
     public class ArtefactController : BaseApiController

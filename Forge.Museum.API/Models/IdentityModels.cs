@@ -31,6 +31,7 @@ namespace Forge.Museum.API.Models
 		public virtual DbSet<StoreItemImage> StoreItemImages { get; set; }
         public virtual DbSet<TourArtefact> TourArtefacts { get; set; }
         public virtual DbSet<Zone> Zones { get; set; }
+        public virtual DbSet<Beacon> Beacons { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
         #endregion
 

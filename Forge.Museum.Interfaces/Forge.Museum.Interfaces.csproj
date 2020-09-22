@@ -53,6 +53,7 @@
     <Compile Include="DataTransferObjects\Artefact\ZoneDto.cs" />
     <Compile Include="DataTransferObjects\Artefact\ZoneSimpleDto.cs" />
     <Compile Include="DataTransferObjects\BaseDto.cs" />
+    <Compile Include="DataTransferObjects\Artefact\BeaconDto.cs" />
     <Compile Include="DataTransferObjects\Common\ApiFilter.cs" />
     <Compile Include="DataTransferObjects\ExampleDto.cs" />
     <Compile Include="DataTransferObjects\Exhibition\ExhibitionDto.cs" />

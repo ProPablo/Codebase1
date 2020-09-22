@@ -16,6 +16,12 @@
         zoneDropdown = ViewBag.ZoneList;
     }
 
+    var beaconDropdown = new List<SelectListItem>();
+    if (ViewBag.ZoneList != null)
+    {
+        beaconDropdown = ViewBag.BeaconList;
+    }
+
     string NameValidation;
     if (ViewBag.ValidationName != null)
     {

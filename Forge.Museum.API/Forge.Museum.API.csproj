@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ArtefactController.cs" />
     <Compile Include="Controllers\ArtefactInfoController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\BeaconsController.cs" />
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\ExhibitionController.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="CoreHandlers\ArtefactHandler.cs" />
     <Compile Include="CoreHandlers\ArtefactInfoHandler.cs" />
     <Compile Include="CoreHandlers\BaseApiHandler.cs" />
+    <Compile Include="CoreHandlers\BeaconHandler.cs" />
     <Compile Include="CoreHandlers\ExampleHandler.cs" />
     <Compile Include="CoreHandlers\ExhibitonHandler.cs" />
     <Compile Include="CoreHandlers\StoreItemHandler.cs" />
@@ -269,6 +271,10 @@
     <Compile Include="Migrations\202009100836249_AddedXYActivation.Designer.cs">
       <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009220308302_Beacons.cs" />
+    <Compile Include="Migrations\202009220308302_Beacons.Designer.cs">
+      <DependentUpon>202009220308302_Beacons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Seeder.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Artefact.cs" />
@@ -279,6 +285,7 @@
     <Compile Include="Models\AspNetUserClaim.cs" />
     <Compile Include="Models\AspNetUserLogin.cs" />
     <Compile Include="Models\Base.cs" />
+    <Compile Include="Models\Beacon.cs" />
     <Compile Include="Models\Exhibition.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\StoreItem.cs" />
@@ -441,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009100836249_AddedXYActivation.resx">
       <DependentUpon>202009100836249_AddedXYActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009220308302_Beacons.resx">
+      <DependentUpon>202009220308302_Beacons.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

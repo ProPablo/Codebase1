@@ -44,6 +44,8 @@ namespace Forge.Museum.API.Models
 
         public virtual ArtefactCategory ArtefactCategory { get; set; }
 
+        public virtual Beacon Beacon { get; set; }
+
         public virtual ICollection<ArtefactInfo> ArtefactInfos { get; set; }
 
         public virtual ICollection<TourArtefact> TourArtefacts { get; set; }
