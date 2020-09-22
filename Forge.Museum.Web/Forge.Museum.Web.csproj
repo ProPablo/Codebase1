@@ -228,6 +228,7 @@
     <Compile Include="Models\ArtefactCategory.cs" />
     <Compile Include="Models\ArtefactInfo.cs" />
     <Compile Include="Models\ArtefactViewModels.cs" />
+    <Compile Include="Models\Beacon.cs" />
     <Compile Include="Models\Events.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
