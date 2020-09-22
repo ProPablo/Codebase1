@@ -346,10 +346,13 @@
     <Content Include="Views\StoreItemImages\Details.cshtml" />
     <Content Include="Views\StoreItemImages\Edit.cshtml" />
     <Content Include="Views\StoreItemImages\Index.cshtml" />
+    <Content Include="Views\Beacons\Index.cshtml" />
+    <Content Include="Views\Beacons\Edit.cshtml" />
+    <Content Include="Views\Beacons\Details.cshtml" />
+    <Content Include="Views\Beacons\Delete.cshtml" />
+    <Content Include="Views\Beacons\Create.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Beacons\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>

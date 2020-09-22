@@ -15,6 +15,6 @@ namespace Forge.Museum.Interfaces.DataTransferObjects.Artefact
         public double Coord_Y { get; set; }
         public string Description { get; set; }
         public string MAC_address { get; set; }
-        public List<ArtefactSimpleDto> Artefacts { get; set; }
+        public List<ArtefactDto> Artefacts { get; set; }
     }
 }
