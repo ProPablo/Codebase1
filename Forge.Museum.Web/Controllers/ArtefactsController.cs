@@ -177,7 +177,7 @@ namespace Forge.Museum.Web.Controllers {
 
             //ARTEFACT BEACON DROPDOWN
             List<SelectListItem> beaconDropdown = new List<SelectListItem>();
-            zoneDropdown = await PopulateBeaconDropdownList();
+            beaconDropdown = await PopulateBeaconDropdownList();
             ViewBag.BeaconList = beaconDropdown;
 
             return View();
@@ -202,7 +202,7 @@ namespace Forge.Museum.Web.Controllers {
 
             //ARTEFACT BEACON DROPDOWN
             List<SelectListItem> beaconDropdown = new List<SelectListItem>();
-            zoneDropdown = await PopulateBeaconDropdownList();
+            beaconDropdown = await PopulateBeaconDropdownList();
             ViewBag.BeaconList = beaconDropdown;
 
             // Checks Name is not Null or Empty
@@ -222,6 +222,8 @@ namespace Forge.Museum.Web.Controllers {
             newArtefact.Coord_Y = artefact.Coord_Y;
             newArtefact.Activation = artefact.Activation;
             newArtefact.ArtefactCategory = artefact.ArtefactCategory;
+            newArtefact.Zone = artefact.Zone;
+            newArtefact.Beacon = artefact.Beacon;
 
             if (ModelState.IsValid) {
                 var request = new HTTPrequest();
@@ -264,7 +266,7 @@ namespace Forge.Museum.Web.Controllers {
 
             //ARTEFACT BEACON DROPDOWN
             List<SelectListItem> beaconDropdown = new List<SelectListItem>();
-            zoneDropdown = await PopulateBeaconDropdownList();
+            beaconDropdown = await PopulateBeaconDropdownList();
             ViewBag.BeaconList = beaconDropdown;
 
             return View(artefact);
@@ -295,6 +297,7 @@ namespace Forge.Museum.Web.Controllers {
                 artefact_editted.AdditionalComments = artefact.AdditionalComments;
                 artefact_editted.ArtefactCategory = artefact.ArtefactCategory;
                 artefact_editted.Zone = artefact.Zone;
+                artefact_editted.Beacon = artefact.Beacon;
                 artefact_editted.ModifiedDate = DateTime.Now;
 
               //  HttpPostedFileBase imgFile = Request.Files["ImageFile"];
