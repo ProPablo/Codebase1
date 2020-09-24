@@ -239,7 +239,6 @@ namespace Forge.Museum.Web.Controllers {
             newArtefact.Activation = artefact.Activation;
             newArtefact.ArtefactCategory = artefact.ArtefactCategory;
             newArtefact.Zone = artefact.Zone;
-            System.Console.WriteLine("CODETEST" + artefact.Beacon);
             newArtefact.Beacon = artefact.Beacon;
 
 
