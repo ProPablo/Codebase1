@@ -20,30 +20,6 @@ namespace Forge.Museum.Web.Controllers {
     public class ArtefactsController : Controller {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        public async Task<List<SelectListItem>> PopulateCategoryDropdown()
-        {
-            var request = new HTTPrequest();
-            List<ArtefactCategorySimpleDto> artefactCateories = await request.Get<List<ArtefactCategorySimpleDto>>("api/artefactCatergory?pageNumber=0&numPerPage=5-0&isDeleted=false");
-            List<SelectListItem> categoryDropdown = new List<SelectListItem>();
-            categoryDropdown.Add(new SelectListItem()
-            {
-                Text = "Select Category",
-                Value = ""
-            });
-            if (artefactCateories != null && artefactCateories.Any())
-            {
-                foreach (var category in artefactCateories)
-                {
-                    categoryDropdown.Add(new SelectListItem()
-                    {
-                        Text = category.Id + ": " + category.Name,
-                        Value = category.Id.ToString()
-                    });
-                }
-            }
-            return categoryDropdown;
-        }
-
         public async Task<List<SelectListItem>> PopulateZoneDropdownList()
         {
             var request = new HTTPrequest();
@@ -52,7 +28,7 @@ namespace Forge.Museum.Web.Controllers {
             zoneDropdown.Add(new SelectListItem()
             {
                 Text = "Select Zone",
-                Value = ""
+                Value = "0"
             });
             if (museumZones != null && museumZones.Any())
             {
@@ -68,6 +44,30 @@ namespace Forge.Museum.Web.Controllers {
             return zoneDropdown;
         }
 
+        public async Task<List<SelectListItem>> PopulateCategoryDropdown()
+        {
+            var request = new HTTPrequest();
+            List<ArtefactCategorySimpleDto> artefactCateories = await request.Get<List<ArtefactCategorySimpleDto>>("api/artefactCatergory?pageNumber=0&numPerPage=5-0&isDeleted=false");
+            List<SelectListItem> categoryDropdown = new List<SelectListItem>();
+            categoryDropdown.Add(new SelectListItem()
+            {
+                Text = "Select Category",
+                Value = "0"
+            });
+            if (artefactCateories != null && artefactCateories.Any())
+            {
+                foreach (var category in artefactCateories)
+                {
+                    categoryDropdown.Add(new SelectListItem()
+                    {
+                        Text = category.Id + ": " + category.Name,
+                        Value = category.Id.ToString()
+                    });
+                }
+            }
+            return categoryDropdown;
+        }
+
         public async Task<List<SelectListItem>> PopulateBeaconDropdownList()
         {
             var request = new HTTPrequest();
@@ -76,7 +76,7 @@ namespace Forge.Museum.Web.Controllers {
             beaconDropdown.Add(new SelectListItem()
             {
                 Text = "Select Beacon",
-                Value = ""
+                Value = "0"
             });
             if (museumBeacons != null && museumBeacons.Any())
             {
@@ -239,6 +239,7 @@ namespace Forge.Museum.Web.Controllers {
             newArtefact.Activation = artefact.Activation;
             newArtefact.ArtefactCategory = artefact.ArtefactCategory;
             newArtefact.Zone = artefact.Zone;
+            System.Console.WriteLine("CODETEST" + artefact.Beacon);
             newArtefact.Beacon = artefact.Beacon;
 
 
