@@ -38,7 +38,7 @@ namespace Forge.Museum.API.Migrations
 				LockoutEnabled = false
 			});
 
-            Seeder.SeedAll(context);
+            //Seeder.SeedAll(context);
         }
     }
 }
