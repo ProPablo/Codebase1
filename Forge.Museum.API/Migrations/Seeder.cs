@@ -18,6 +18,7 @@ namespace Forge.Museum.API.Migrations
 
             context.Artefacts.AddOrUpdate(new Artefact
             {
+                Id =  1,
                 Name = "Dynamax Pikachu",
                 Description = "How did we fit this inside the Museum",
                 Radius_Of_Effect = 200,
