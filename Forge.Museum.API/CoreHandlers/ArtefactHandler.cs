@@ -85,36 +85,38 @@ namespace Forge.Museum.API.CoreHandlers
             artefact.IsDeleted = dto.IsDeleted;
             artefact.ModifiedDate = DateTime.UtcNow;
 
-            //Process zone
-            if(dto.Zone != null && dto.Zone.Id > 0)
-            {
-                artefact.Zone = Db.Zones.Find(dto.Zone.Id);
-            }
-            else
-            {
-                artefact.Zone = null;
-            }
-
-            //Process Category
-            if(dto.ArtefactCategory != null && dto.ArtefactCategory.Id > 0)
-            {
-                artefact.ArtefactCategory = Db.ArtefactCategories.Find(dto.ArtefactCategory.Id);
-            }
-            else
-            {
-                artefact.ArtefactCategory = null;
-            }
-
-            //Process Beacon
-            if (dto.Beacon != null && dto.Beacon.Id > 0)
+            // Process Beacon
+            if (dto.Beacon.Id > 0)
             {
                 artefact.Beacon = Db.Beacons.Find(dto.Beacon.Id);
             }
             else
             {
+                _ = artefact.Beacon;
                 artefact.Beacon = null;
             }
 
+            // Process Category
+            if (dto.ArtefactCategory.Id > 0)
+            {
+                artefact.ArtefactCategory = Db.ArtefactCategories.Find(dto.ArtefactCategory.Id);
+            }
+            else
+            {
+                _ = artefact.ArtefactCategory;
+                artefact.ArtefactCategory = null;
+            }
+
+            // Process zone
+            if (dto.Zone.Id > 0)
+            {
+                artefact.Zone = Db.Zones.Find(dto.Zone.Id);
+            }
+            else
+            {
+                _ = artefact.Zone;
+                artefact.Zone = null;
+            }
 
             Db.SaveChanges();
 
